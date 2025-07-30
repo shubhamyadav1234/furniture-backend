@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Furniture Categories</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/apple-touch-icon.png" type="image/png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 260px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background-color: transparent;
+    }
+
+    .card h3 {
+      color: #6a1b1b;
+      font-size: 1.2rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .card a.btn{
+      display: inline-block;
+      background-color: #d88985;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .card a.btn:hover {
+      background-color: #bb6e6b;
+    }
+
+     footer {
+      background: #ffeceb;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-weight: bold;
+    }
+/*  */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #ffecec;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  height: 60px;
+}
+
+/* Left: Home & Back */
+.header-left {
+  display: flex;
+  gap: 1.5rem;
+  z-index: 1;
+}
+
+/* Center logo + brand */
+.center-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  height: 30px;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* Home and Back links */
+.header-left a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+  </style>
+</head>
+<body>
+
+
+<header class="main-header">
+  <div class="header-left">
+    <a href="index.html">Home</a>
+    <a href="javascript:history.back()">← Back</a>
+  </div>
+
+  <div class="center-brand">
+    <img src="images/apple-touch-icon.png" alt="Logo" class="logo">
+    <div class="brand">ElegantFurniture</div>
+  </div>
+</header>
+
+
+  <div class="container">
+    <h2>Furniture Categories</h2>
+    <div class="card-grid">
+
+      <div class="card">
+        <a href="sofa.html"><img src="images/sofa3.jpg" alt="Sofa"></a>
+        <h3>Sofa</h3>
+        <p>Elegant sofas for modern living rooms</p>
+        <a class="btn" href="sofa.html">View more</a>
+      </div>
+
+      <div class="card">
+        <a href="chair.html"><img src="images/chair2.jpg" alt="Chair"></a>
+        <h3>Chair</h3>
+        <p>Stylish and comfy chairs for all spaces</p>
+        <a class="btn" href="chair.html">View more</a>
+      </div>
+
+      <div class="card">
+        <a href="table.html"><img src="images/table.jpg" alt="Table"></a>
+        <h3>Table</h3>
+        <p>Dining and coffee tables to elevate your home</p>
+        <a class="btn" href="table.html">View more</a>
+      </div>
+
+      <div class="card">
+        <a href="bed.html"><img src="images/bed3.jpg" alt="Bed"></a>
+        <h3>Bed</h3>
+        <p>Relaxing beds with modern storage options</p>
+        <a class="btn" href="bed.html">View more</a>
+      </div>
+
+      <div class="card">
+        <a href="wardrobe.html"><img src="images/wardrobes.jpg" alt="wardrobes"></a>
+        <h3>Cupboard</h3>
+        <p>Spacious Wardrobes with elegant finishes</p>
+        <a class="btn" href="wardrobe.html">View more</a>
+      </div>
+
+      <div class="card">
+        <a href="dressingtable.html"><img src="images/dressingtable.jpg" alt="dressingtable"></a>
+        <h3>Dressing Table</h3>
+        <p>Flora Engineered Wood Dressing Table in Walnut Finish</p>
+        <a class="btn" href="dressingtable.html">View more</a>
+      </div>
+
+      <div class="card">
+        <a href="bookshelf.html"><img src="images/bookshelf.jpg" alt="Bookshelves"></a>
+        <h3>Bookshelves</h3>
+        <p>Mateo Solid Wood Bookshelf in Mahogany Finish</p>
+        <a class="btn" href="bookshelf.html">View more</a>
+      </div>
+
+      <div class="card">
+        <a href="dining.html"><img src="images/diningset.jpg" alt="diningset"></a>
+        <h3>Dining Sets</h3>
+        <p>Paloma 6 Seater Spanish Ceramic Dining Table With Set Of 6 Casey Swivel Dining Chairs</p>
+        <a class="btn" href="dining.html">View more</a>
+      </div>
+
+    </div>
+  </div>
+
+   <footer>
+    &copy; 2025 ElegantFurniture. All rights reserved.
+  </footer>
+
+</body>
+</html>
