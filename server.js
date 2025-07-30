@@ -7,7 +7,7 @@ app.use(express.json());
 
 // 🔗 IMPORT ROUTES
 const authRoutes = require("./routes/authRoutes"); // 🔒 Auth
-const productRoutes = require("./product/routes/product.routes"); // 🪑 Product
+const productRoutes = require("./Product/routes/product.routes"); // 🪑 Product
 
 // 🛣️ USE ROUTES
 app.use("/api/auth", authRoutes);         // Existing route for Register/Login
