@@ -376,15 +376,7 @@
 
 
 <script>
-  // Login Form (fake for now – update later if you have backend for login)
-  document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    alert("Login successful! (You can integrate real login later)");
-    document.getElementById("loginModal").style.display = "none";
-  });
-
-  // Signup Form (connected to your real backend)
-  document.getElementById("signupForm").addEventListener("submit", async function(event) {
+  document.getElementById("signupForm").addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const Username = document.querySelector("#signupForm input[type='text']").value;
@@ -394,7 +386,7 @@
     const data = { Username, Email, Password };
 
     try {
-      const response = await fetch("https://furniture-backend-1u1v.onrender.com/api/auth/register", {
+      const response = await fetch("https://furniture-backend-1-fs81.onrender.com/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -404,14 +396,20 @@
 
       const result = await response.text();
 
-      alert(result); // Show backend response
-      document.getElementById("signupModal").style.display = "none";
+      if (response.ok) {
+        alert(result); // e.g., "User registered successfully!"
+        document.getElementById("signupModal").style.display = "none";
+      } else {
+        alert(result || "❌ Signup failed.");
+      }
+
     } catch (error) {
       console.error("Error during signup:", error);
       alert("❌ Signup failed. Please try again.");
     }
   });
 </script>
+
 
 
 
