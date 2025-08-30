@@ -1,0 +1,607 @@
+<!-- product-details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="style.css"> <!-- optional -->
+  <style>
+.success-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  padding: 2rem;
+  text-align: center;
+  width: 300px;
+  z-index: 10000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.success-popup.show {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.success-popup .popup-content h2 {
+  color: #4BB543;
+  margin-bottom: 0.5rem;
+}
+
+.success-popup .popup-content p {
+  color: #333;
+  font-size: 14px;
+}
+
+.success-popup .close-popup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #888;
+}
+</style>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffaf9;
+      margin: 0;
+      padding: 1rem;
+    }
+
+    .product-container {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .product-image {
+      flex: 1;
+      min-width: 300px;
+      padding: 1rem;
+      align-content: center;
+    }
+
+    .product-image img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .product-info {
+      flex: 2;
+      padding: 1rem;
+    }
+
+    .product-info h1 {
+      margin-top: 0;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      color: #b12704;
+      font-weight: bold;
+    }
+
+    .buttons {
+      margin: 1rem 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #8b2c2c;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .heart {
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: #888;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    .heart.liked {
+      color: red;
+    }
+
+    .details-section {
+      margin-top: 1.5rem;
+    }
+
+    .details-section h3 {
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .details-section p {
+      margin: 0 0 1rem;
+      color: #555;
+    }
+
+    /* section */
+.product-section {
+  padding: 40px;
+  background-color: #fdfdfd;
+}
+
+.product-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #333;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #222;
+}
+
+.product-card .price {
+  font-weight: bold;
+  color: #b12704;
+  margin-top: 5px;
+}
+
+
+
+/* Basic Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+  border-bottom: 1px solid #ccc;
+  font-family: sans-serif;
+}
+
+/* Left Nav */
+.nav-left {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Center Nav */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+/* Logo image */
+.logo {
+  height: 30px;
+  margin-right: 0.5rem;
+}
+
+/* Brand name */
+.brand-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* Links */
+.nav-left a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+
+/* Order Button */
+.order-btn {
+  background-color: #ff6f00;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Show popup when target */
+#order-popup:target {
+  display: flex;
+}
+
+/* Popup Card */
+.popup-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 300px;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #888;
+}
+
+/* Form Elements */
+.popup-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-card input,
+.popup-card textarea {
+  margin-bottom: 1rem;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.popup-card button {
+  background-color: #8b2c2c;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+ footer {
+      background: #ffeceb;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-weight: bold;
+    }
+/*  */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #ffecec;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  height: 60px;
+}
+
+/* Left: Home & Back */
+.header-left {
+  display: flex;
+  gap: 1.5rem;
+  z-index: 1;
+}
+
+/* Center logo + brand */
+.center-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  height: 30px;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* Home and Back links */
+.header-left a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+
+  </style>
+</head>
+
+<!-- <header class="navbar">
+  <div class="nav-left">
+    <a href="index.html">Home</a>
+    <a href="sofa.html">Back</a>
+  </div>
+  <div class="nav-center">
+    <img src="images/apple-touch-icon.png" alt="Logo" class="logo">
+    <span class="brand-name">ElegantFurniture</span>
+  </div>
+</header> -->
+
+<header class="main-header">
+  <div class="header-left">
+    <a href="index.html">Home</a>
+    <a href="javascript:history.back()">← Back</a>
+  </div>
+
+  <div class="center-brand">
+    <img src="images/apple-touch-icon.png" alt="Logo" class="logo">
+    <div class="brand">ElegantFurniture</div>
+  
+  </div>
+  <link rel="stylesheet" href="popup.css">
+</header>
+
+<body>
+
+  <div id="modern-green-success" style="display: none;">
+  <div class="modern-popup">
+    <span class="close-btn">&times;</span>
+    <h2>🎉 Success!</h2>
+    <p>Your order has been placed successfully.</p>
+  </div>
+</div>
+
+
+
+
+  <div class="product-container">
+    <div class="product-image">
+      <img src="images/sofa3.jpg" alt="Floral Sofa">
+    </div>
+    <div class="product-info">
+      <h1>Floral Luxury Sofa</h1>
+      <p class="price">₹72,387</p>
+
+      <div class="buttons">
+        <a href="#order-popup" class="btn">Order Now</a>
+        <a href="https://wa.me/919999999999?text=I'm%20interested%20in%20this%20sofa" target="_blank" class="btn">Enquiry on WhatsApp</a>
+        <span class="heart" onclick="toggleLike(this)">&#9825;</span> <!-- empty heart -->
+      </div>
+
+      <div class="details-section">
+        <h3>Product Features:</h3>
+        <p>Italian floral upholstery, durable hardwood frame, modern design, perfect for 2-3 people.</p>
+
+        <h3>Product Care Instructions:</h3>
+        <p>Use dry cloth for cleaning. Avoid direct sunlight exposure.</p>
+
+        <h3>Service & Warranty:</h3>
+        <p>1-year manufacturer warranty on frame & foam.</p>
+
+        <h3>Returns & Cancellation:</h3>
+        <p>Return within 10 days of delivery if damaged. No cancellation after shipping.</p>
+      </div>
+    </div>
+  </div>
+
+   <!-- Order Now Popup Section -->
+<div id="order-popup" class="popup-overlay">
+  <div class="popup-card">
+    <a href="#" class="close-btn">&times;</a>
+    <h2>Place Your Order</h2>
+    <form id="orderform">
+  <label for="customerName">Name:</label>
+  <input type="text" id="customerName" placeholder="Your Name" required>
+
+  <label for="phone">Phone:</label>
+  <input type="tel" id="phone" placeholder="Your Phone Number" required>
+
+  <label for="address">Address:</label>
+  <textarea id="address" placeholder="Your Address" required></textarea>
+
+  <button type="submit">Confirm Order</button>
+</form>
+
+    </form>
+  </div>
+</div>
+
+
+
+  <!-- section -->
+<section class="product-section">
+  <h2>More like these</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="images/sofa1.jpg" alt="Luxury Sofa">
+      <h3>Luxury Sofa</h3>
+      <p class="price">₹72,387</p>
+    </div>
+    <div class="product-card">
+      <img src="images/sofa2.jpg" alt="Elegant Sofa">
+      <h3>Elegant Sofa</h3>
+      <p class="price">₹64,999</p>
+    </div>
+    <div class="product-card">
+      <img src="images/sofa3.jpg" alt="Modern Sofa">
+      <h3>Modern Sofa</h3>
+      <p class="price">₹58,750</p>
+    </div>
+    <div class="product-card">
+      <img src="images/sofa4.jpg" alt="Classic Sofa">
+      <h3>Classic Sofa</h3>
+      <p class="price">₹49,990</p>
+    </div>
+  </div>
+</section>
+
+ <footer>
+    &copy; 2025 ElegantFurniture. All rights reserved.
+  </footer>
+
+
+
+ <!-- <script>
+document.getElementById("orderform").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const customerName = document.getElementById("customerName").value;
+  const phone = document.getElementById("phone").value;
+  const address = document.getElementById("address").value;
+
+  try {
+    const response = await fetch("http://localhost:3000/api/order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ customerName, phone, address })
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      alert("✅ Order placed successfully!");
+      document.getElementById("orderform").reset();
+      // Close popup
+      window.location.hash = "";
+    } else {
+      alert("⚠️ Failed: " + data.message);
+    }
+  } catch (error) {
+    alert("❌ Error connecting to server: " + error.message);
+  }
+});
+</script>
+
+<div id="success-popup" class="success-popup">
+  <div class="popup-content">
+    <span class="close-popup">&times;</span>
+    <h2>✅ Order Placed!</h2>
+    <p>Thank you for your order. We will contact you shortly.</p>
+  </div>
+</div>
+<script>function showModernGreenSuccess() {
+    const popupContainer = document.getElementById('modern-green-success');
+    const popup = popupContainer.querySelector('.modern-popup');
+    popupContainer.style.display = 'flex';
+    void popup.offsetWidth;
+    popupContainer.classList.add('show');
+    setTimeout(() => {
+      popupContainer.classList.remove('show');
+      setTimeout(() => {
+        popupContainer.style.display = 'none';
+      }, 400);
+    }, 3000);
+  }
+
+  document.querySelectorAll('.close-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const popupContainer = document.getElementById('modern-green-success');
+      popupContainer.classList.remove('show');
+      setTimeout(() => {
+        popupContainer.style.display = 'none';
+      }, 400);
+    });
+  });
+
+  showModernGreenSuccess(); -->
+<!-- </script> -->
+<!-- Include SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+document.getElementById("orderform").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const customerName = document.getElementById("customerName").value;
+  const phone = document.getElementById("phone").value;
+  const address = document.getElementById("address").value;
+
+  try {
+    const response = await fetch("http://localhost:3000/api/order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ customerName, phone, address })
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      Swal.fire({
+        icon: "success",
+        title: "✅ Order Placed!",
+        text: "Thank you for your order. We will contact you shortly.",
+        confirmButtonColor: "#28a745"
+      });
+      document.getElementById("orderform").reset();
+      // Optional: close popup modal if using hash
+      window.location.hash = "";
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "⚠️ Failed",
+        text: data.message,
+        confirmButtonColor: "#d33"
+      });
+    }
+  } catch (error) {
+    Swal.fire({
+      icon: "error",
+      title: "❌ Error",
+      text: "Error connecting to server: " + error.message,
+      confirmButtonColor: "#d33"
+    });
+  }
+});
+</script>
+
+</body>
+</html>

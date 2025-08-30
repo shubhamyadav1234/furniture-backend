@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--primary);
+}
+
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary);
+  color: #111010fb;
+  padding: 1rem 2rem; /* add padding manually */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+nav a {
+  margin: 0 1rem;
+  color: #111010fb;
+  text-decoration: none;
+  font-weight: 500;
+}
+.icons span {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+}
+
+/* profile dropdown */
+/* Style icons */
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icons span {
+  margin-left: 1rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 6px;
+  padding: 0.5rem 0;
+}
+
+/* Dropdown content links */
+.dropdown-content a {
+  color: #131212;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #d88985;
+}
+
+/* Show the dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  background: white;
+  max-width: 1200px;
+  margin: 3rem auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.product-image {
+  flex: 1 1 50%;
+  background-color: #fff3ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  padding: 2rem;
+}
+
+.product-details {
+  flex: 1 1 50%;
+  padding: 2.5rem;
+}
+
+.product-details h1 {
+  font-size: 2rem;
+  color: #4a2e16;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  color: #d35400;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.product-details h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.product-details ul {
+  list-style: square;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.buy-btn {
+  background-color: #d35400;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.buy-btn:hover {
+  background-color: #b84300;
+}

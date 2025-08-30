@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floral Luxury Sofa</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #fffaf9;
+    }
+
+    .product-page {
+      display: flex;
+      gap: 30px;
+      padding: 30px;
+    }
+
+    .sidebar {
+      width: 280px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #e0e0e0;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .sidebar .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .sidebar .card-content {
+      padding: 10px;
+    }
+
+    .sidebar .card-content h4 {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    .sidebar .card-content p {
+      font-size: 13px;
+      color: #666;
+      margin: 0 0 5px 0;
+    }
+
+    .sidebar .price {
+      font-weight: bold;
+      color: #000;
+    }
+
+    .sidebar .original-price {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 13px;
+      margin-left: 6px;
+    }
+
+    .sidebar .discount {
+      color: #d32f2f;
+      font-size: 13px;
+      margin-left: 6px;
+    }
+
+    .product-detail {
+      display: flex;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #e0e0e0;
+      padding: 20px;
+      flex-grow: 1;
+    }
+
+    .image-card {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-card img {
+      width: 80%;
+      max-width: 400px;
+      border-radius: 12px;
+    }
+
+    .details-card {
+      flex: 1;
+      padding: 0 20px;
+    }
+
+    .details-card h1 {
+      font-size: 28px;
+    }
+
+    .details-card .price {
+      font-size: 22px;
+      color: #d80032;
+      margin: 10px 0;
+    }
+
+    .details-card button {
+      background: #8b0000;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      margin-right: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .whatsapp {
+      background-color: #25D366;
+    }
+
+    .details-card h3 {
+      margin-top: 18px;
+    }
+
+
+/* update style code */
+
+.product-detail {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.top-section {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Left side image */
+.main-img-wrapper {
+  flex: 1;
+  max-width: 45%;
+}
+
+.main-img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Right side details */
+.details-card {
+  flex: 1;
+  max-width: 50%;
+}
+
+.details-card h1 {
+  margin-bottom: 5px;
+}
+
+.details-card .price {
+  color: #c00;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.details-card button {
+  background-color: #8B0000;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  margin: 6px 10px 14px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Thumbnails section */
+.thumbnail-gallery {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.thumb {
+  width: 100px;
+  height: 75px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.thumb:hover {
+  transform: scale(1.05);
+}
+
+
+
+  </style>
+</head>
+<body>
+  <div class="product-page">
+
+    <aside class="sidebar">
+      <h2>Other Products</h2>
+
+      <div class="card">
+        <img src="images/sofa.webp" alt="Luxury Sofa">
+        <div class="card-content">
+          <h4>Luxury Sofa</h4>
+          <p>Bent Glass Coffee Table</p>
+          <p><span class="price">₹20,520</span>
+            <span class="original-price">₹34,200</span>
+            <span class="discount">40% off</span></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/sofa.webp" alt="Luxury Sofa">
+        <div class="card-content">
+          <h4>Luxury Sofa</h4>
+          <p>Bent Glass Coffee Table</p>
+          <p><span class="price">₹20,520</span>
+            <span class="original-price">₹34,200</span>
+            <span class="discount">40% off</span></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/sofa.webp" alt="Luxury Sofa">
+        <div class="card-content">
+          <h4>Luxury Sofa</h4>
+          <p>Bent Glass Coffee Table</p>
+          <p><span class="price">₹20,520</span>
+            <span class="original-price">₹34,200</span>
+            <span class="discount">40% off</span></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/sofa.webp" alt="Luxury Sofa">
+        <div class="card-content">
+          <h4>Luxury Sofa</h4>
+          <p>Bent Glass Coffee Table</p>
+          <p><span class="price">₹20,520</span>
+            <span class="original-price">₹34,200</span>
+            <span class="discount">40% off</span></p>
+        </div>
+      </div>
+
+      <!-- Repeat for other products -->
+    </aside>
+
+    <!-- <section class="product-detail">
+      <div class="image-card">
+        <img src="images/sofa3.jpg" alt="Floral Luxury Sofa">
+      </div>
+      <div class="details-card">
+        <h1>Floral Luxury Sofa</h1>
+        <p class="price">₹72,387</p>
+        <button>Order Now</button>
+        <a href="https://wa.me/919999999999" target="_blank">
+          <button class="whatsapp">Enquiry on WhatsApp</button>
+        </a>
+
+        <h3>Product Features:</h3>
+        <p>Italian floral upholstery, durable hardwood frame, modern design, perfect for 2-3 people.</p>
+
+        <h3>Product Care Instructions:</h3>
+        <p>Use dry cloth for cleaning. Avoid direct sunlight exposure.</p>
+
+        <h3>Service & Warranty:</h3>
+        <p>1-year manufacturer warranty on frame & foam.</p>
+
+        <h3>Returns & Cancellation:</h3>
+        <p>Return within 10 days of delivery if damaged. No cancellation after shipping.</p>
+      </div>
+    </section> -->
+
+
+  <section class="product-detail">
+  <!-- Top section: Image on left, details on right -->
+  <div class="top-section">
+    <div class="main-img-wrapper">
+      <img src="images/sofa3.jpg" alt="Floral Luxury Sofa" class="main-img">
+    </div>
+
+    <div class="details-card">
+      <h1>Floral Luxury Sofa</h1>
+      <p class="price">₹72,387</p>
+      <button>Order Now</button>
+      <a href="https://wa.me/919999999999" target="_blank">
+        <button class="whatsapp">Enquiry on WhatsApp</button>
+      </a>
+
+      <h3>Product Features:</h3>
+      <p>Italian floral upholstery, durable hardwood frame, modern design, perfect for 2-3 people.</p>
+
+      <h3>Product Care Instructions:</h3>
+      <p>Use dry cloth for cleaning. Avoid direct sunlight exposure.</p>
+
+      <h3>Service & Warranty:</h3>
+      <p>1-year manufacturer warranty on frame & foam.</p>
+
+      <h3>Returns & Cancellation:</h3>
+      <p>Return within 10 days of delivery if damaged. No cancellation after shipping.</p>
+    </div>
+  </div>
+
+  <!-- Bottom thumbnails -->
+  <div class="thumbnail-gallery">
+    <img src="images/sofa3-angle1.jpg" alt="Side View" class="thumb">
+    <img src="images/sofa3-angle2.jpg" alt="Back View" class="thumb">
+    <img src="images/sofa3-angle3.jpg" alt="Close-Up View" class="thumb">
+  </div>
+</section>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

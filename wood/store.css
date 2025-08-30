@@ -1,0 +1,219 @@
+/* General */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+/* Header */
+/* .site-header {
+  background-color: #2d475b;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.navbar {
+  margin-top: 0.5rem;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 0.7rem;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+} */
+
+
+/* Sticky header 
+ .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffecec;  light pink 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+max-height: 10%;
+}  */
+
+/* Flex layout with three parts: left, center, right */
+/* .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  position: relative;
+} */
+
+/* Center logo absolutely */
+/* .logo-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-container img {
+  height: 50px;
+  width: auto;
+}
+
+.logo-container span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111;
+} */
+
+/* Navbar on left */
+.navbar {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+/* Optional right side (can be empty or add icons) */
+.header-right {
+  width: 60px; /* keep some width so center stays center */
+}
+
+
+
+/* Store section */
+.store-section {
+  text-align: center;
+  padding: 2rem;
+}
+
+.store-section h2 {
+  font-family: 'Cursive', sans-serif;
+  background-color: #ffecec;
+  color: rgb(4, 3, 3);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  display: inline-block;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Store card */
+.store-card {
+  background-color: #d88985;
+  color: rgb(0, 0, 0);
+  border-radius: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.store-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.store-card img {
+  width: 60px;
+  margin-bottom: 0.5rem;
+}
+
+.store-card h3 {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.store-card p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Footer
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ffecec;
+  color: rgb(0, 0, 0);
+  margin-top: 2rem;
+  font-size: 0.9rem;
+} */
+
+
+ footer {
+      background: #ffeceb;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-weight: bold;
+    }
+/*  */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #ffecec;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  height: 60px;
+}
+
+/* Left: Home & Back */
+.header-left {
+  display: flex;
+  gap: 1.5rem;
+  z-index: 1;
+}
+
+/* Center logo + brand */
+.center-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  height: 60px;
+}
+
+.brand {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* Home and Back links */
+.header-left a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
